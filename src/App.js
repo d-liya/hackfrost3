@@ -4,10 +4,12 @@ import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { TiLeaf, TiLocation } from "react-icons/ti";
 import { HiCurrencyDollar } from "react-icons/hi";
 import { GrTechnology } from "react-icons/gr";
+import useOnScreen from "./hooks/useOnScreen";
+import { FiPackage } from "react-icons/fi";
 
 function App() {
-  const introSpring = useSpring({});
-  const { scrollYProgress } = useScroll();
+  const howItWorksRef = React.useRef();
+
   return (
     <div className="bg-gray-50">
       <header>
@@ -31,11 +33,7 @@ function App() {
           </ul>
         </nav>
       </header>
-      {/* <Parallax pages={1} style={{ top: "0", left: "0" }}>
-        <ParallaxLayer offset={0} speed={2.5}>
-          <p>Parallax</p>
-        </ParallaxLayer>
-      </Parallax> */}
+
       <body className="flex justify-center relative flex-col">
         <section
           id="intro"
@@ -92,10 +90,87 @@ function App() {
           </ul>
         </section>
         <section id="stats"></section>
-        <section id="how-it-works"></section>
+
+        <section
+          id="how-it-works"
+          className="min-h-screen rounded-lg bg-indigo-500 flex-col text-black"
+        >
+          <h1 className="text-center font-semibold pt-20 text-gray-50">
+            HOW IT WORKS
+          </h1>
+          <h2 className="text-center text-6xl font-bold py-5 pb-40 text-gray-50 mx-40">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          </h2>
+          <div className="flex justify-center">
+            <div id="line" className="items-center flex flex-col">
+              <div className="w-5 h-[1px] bg-white" />
+              <div className="w-[1px] h-[100px] bg-white" />
+              <InfoCard
+                step={1}
+                title=" Order is received and retrieved"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
+        dolor sit amet consectetur adipisicing elit"
+              />
+              <div className="w-[1px] h-[400px] bg-white" />
+              <InfoCard
+                step={2}
+                title=" Order is received and retrieved"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
+        dolor sit amet consectetur adipisicing elit"
+              />
+              <div className="w-[1px] h-[400px] bg-white" />
+              <InfoCard
+                step={3}
+                title=" Order is received and retrieved"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
+        dolor sit amet consectetur adipisicing elit"
+              />
+              <div className="w-[1px] h-[300px] bg-white" />
+              <InfoCard
+                step={4}
+                title=" Order is received and retrieved"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
+        dolor sit amet consectetur adipisicing elit"
+              />
+              <div className="w-[1px] h-[200px] bg-white" />
+              <div className="w-5 h-[1px] bg-white" />
+            </div>
+            <div>
+              <div className="flex justify-center items-center pt-60">
+                <article className="flex items-center">
+                  <SmallCard className="absolute translate-x-[300px] translate-y-[150px]" />
+                  <Card className="-translate-x-5 translate-y-5 bg-teal-600 text-white" />
+                  <ImageCard className="" />
+                </article>
+              </div>
+              <div className="flex justify-center items-center pt-80">
+                <article className="flex items-center">
+                  <ImageCard className="" />
+                  <SmallCard className="absolute  translate-y-[150px]" />
+                  <Card className="-translate-x-5 -translate-y-10" />
+                </article>
+              </div>
+              <div className="flex justify-center items-center pt-80">
+                <article className="flex items-center">
+                  <SmallCard className="absolute translate-x-[300px] translate-y-[150px] " />
+                  <Card className="-translate-x-5 translate-y-5 bg-emerald-800 text-white" />
+                  <ImageCard className="" />
+                </article>
+              </div>
+              <div className="flex justify-center items-center py-80">
+                <article className="flex items-center">
+                  <ImageCard className="" />
+                  <SmallCard className="absolute  translate-y-[150px]" />
+                  <Card className="-translate-x-5 -translate-y-10 bg-cyan-600 text-white" />
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="about">
-          <div className="flex items-center justify-left w-[1150px] m-auto">
-            <h1 className="text-4xl font-bold text-center mb-2 ml-12">
+          <div className="flex items-center justify-center w-[1150px] m-auto mt-10">
+            <h1 className="text-5xl font-bold text-center mb-10 ml-12">
               Elevate your delivery experience.
             </h1>
           </div>
@@ -180,3 +255,53 @@ function App() {
 }
 
 export default App;
+
+const Card = ({ className, textOne, textTwo }) => {
+  return (
+    <div
+      className={
+        "w-[400px] top-[150px] left-[380px] bg-green-500 rounded h-[200px] p-5 flex flex-col justify-between " +
+        className
+      }
+    >
+      <h1 className="font-semibold">{textOne || "Items Received"}</h1>
+      <p className="font-bold text-5xl">{textTwo || "100"}</p>
+    </div>
+  );
+};
+
+const SmallCard = ({ className }) => {
+  return (
+    <div
+      className={
+        "bg-gray-50 w-[400px] rounded px-5 py-2 mb-4 flex justify-between items-center text-black " +
+        className
+      }
+    >
+      <div>
+        <h1 className="text-sm">Items Received</h1>
+        <p className="font-bold text-xs">100</p>
+      </div>
+      <FiPackage />
+    </div>
+  );
+};
+const ImageCard = ({ className }) => {
+  return (
+    <img
+      src={process.env.PUBLIC_URL + "/images/delivery-man.jpg"}
+      className={" rounded  w-[400px] " + className}
+      alt="test"
+    />
+  );
+};
+
+const InfoCard = ({ className, step, title, description }) => {
+  return (
+    <article className="max-w-[400px] text-lg text-white  p-2 rounded">
+      <h1 className="font-bold ">STEP {step}</h1>
+      <h2 className=" font-semibold pt-3 pb-1">{title}</h2>
+      <p className="">{description}</p>
+    </article>
+  );
+};
