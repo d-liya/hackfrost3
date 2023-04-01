@@ -1,6 +1,9 @@
 import React from "react";
 import { useScroll, useSpring, animated } from "@react-spring/web";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+import { TiLeaf, TiLocation } from "react-icons/ti";
+import { HiCurrencyDollar } from "react-icons/hi";
+import { GrTechnology } from "react-icons/gr";
 import useOnScreen from "./hooks/useOnScreen";
 import { FiPackage } from "react-icons/fi";
 
@@ -86,6 +89,8 @@ function App() {
             </li>
           </ul>
         </section>
+        <section id="stats"></section>
+
         <section
           id="how-it-works"
           className="min-h-screen rounded-lg bg-indigo-500 flex-col text-black"
@@ -160,6 +165,87 @@ function App() {
                 </article>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="about">
+          <div className="flex items-center justify-center w-[1150px] m-auto mt-10">
+            <h1 className="text-5xl font-bold text-center mb-10 ml-12">
+              Elevate your delivery experience.
+            </h1>
+          </div>
+          <div className="flex items-center justify-center w-[1150px] m-auto mb-10">
+            <div className="flex w-2/3 flex-col m-5 ml-12 pr-12">
+              <div>
+                <div className="flex items-center mb-1">
+                  <HiCurrencyDollar className="mr-1 text-xl text-slate-600" />
+                  <h2 className="text-lg font-semibold">
+                    Reduce Delivery Costs
+                  </h2>
+                </div>
+                <p className="mb-8">
+                  <div className="mb-2">
+                    The last mile is the most inefficient and costly part of the
+                    delivery chain.
+                  </div>{" "}
+                  Reducing the time spent in traffic and finding parking helps
+                  bring down costs.
+                </p>
+              </div>
+              <div>
+                <div className="flex items-center mb-1">
+                  <TiLeaf className="mr-1 text-xl text-emerald-900" />
+                  <h2 className="text-lg font-semibold">
+                    Decarbonize the Last Mile
+                  </h2>
+                </div>
+                <p className="mb-8">
+                  <div className="mb-2">
+                    Help us work towards a net zero future in a cost-effective,
+                    sustainable way.
+                  </div>{" "}
+                  Let us handle the last mile to reduce your carbon footprint
+                  and enhance your brand reputation.
+                </p>
+              </div>
+              <div>
+                <div className="flex items-center mb-1">
+                  <GrTechnology className="mr-1 text-xl" />
+                  <h2 className="text-lg font-semibold">
+                    Leverage Emerging Technology
+                  </h2>
+                </div>
+                <p className="mb-8">
+                  <div className="mb-2">
+                    Cutting-edge drones and electric vehicles are
+                    revolutionizing package delivery.
+                  </div>{" "}
+                  Take advantage of the opportunity to achieve faster and safer
+                  deliveries.
+                </p>
+              </div>
+              <div>
+                <div className="flex items-center mb-1">
+                  <TiLocation className="mr-1 text-xl text-red-800" />
+                  <h2 className="text-lg font-semibold">
+                    Reliable Delivery Management
+                  </h2>
+                </div>
+                <p>
+                  <div className="mb-2">
+                    We are committed to providing reliable and on-time
+                    deliveries.
+                  </div>{" "}
+                  With advanced tracking systems, you can trust us to handle
+                  your packages with care and precision.
+                </p>
+              </div>
+            </div>
+            <img
+              src={require("./image.png")}
+              className="ml-5"
+              style={{ height: "560px" }}
+            ></img>
           </div>
         </section>
         <section id="map"></section>
