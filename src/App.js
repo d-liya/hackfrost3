@@ -1,15 +1,12 @@
 import React from "react";
-import { useScroll, useSpring, animated } from "@react-spring/web";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { TiLeaf, TiLocation } from "react-icons/ti";
 import { HiCurrencyDollar } from "react-icons/hi";
 import { GrTechnology } from "react-icons/gr";
-import useOnScreen from "./hooks/useOnScreen";
+import VisibilitySensor from "react-visibility-sensor";
 import { FiPackage } from "react-icons/fi";
+import { Spring, animated } from "@react-spring/web";
 
 function App() {
-  const howItWorksRef = React.useRef();
-
   return (
     <div className="bg-gray-50">
       <header>
@@ -470,50 +467,145 @@ export default App;
 
 const Card = ({ className, textOne, textTwo }) => {
   return (
-    <div
-      className={
-        "w-[400px] top-[150px] left-[380px] bg-green-500 rounded h-[200px] p-5 flex flex-col justify-between " +
-        className
-      }
-    >
-      <h1 className="font-semibold">{textOne || "Items Received"}</h1>
-      <p className="font-bold text-5xl">{textTwo || "100"}</p>
-    </div>
+    <VisibilitySensor partialVisibility>
+      {({ isVisible }) => (
+        <Spring
+          delay={200}
+          to={{
+            transform: isVisible ? "translateY(0)" : "translateY(-50px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        >
+          {({ transform, opacity }) => (
+            <animated.div
+              className={
+                "w-[400px] top-[150px] left-[380px] bg-green-500 rounded h-[200px] p-5 flex flex-col justify-between " +
+                className
+              }
+              style={{
+                opacity,
+              }}
+            >
+              <h1 className="font-semibold">{textOne || "Items Received"}</h1>
+              <p className="font-bold text-5xl">{textTwo || "100"}</p>
+            </animated.div>
+          )}
+        </Spring>
+      )}
+    </VisibilitySensor>
   );
 };
 
 const SmallCard = ({ className }) => {
   return (
-    <div
-      className={
-        "bg-gray-50 w-[400px] rounded px-5 py-2 mb-4 flex justify-between items-center text-black " +
-        className
-      }
-    >
-      <div>
-        <h1 className="text-sm">Items Received</h1>
-        <p className="font-bold text-xs">100</p>
-      </div>
-      <FiPackage />
-    </div>
+    <VisibilitySensor partialVisibility>
+      {({ isVisible }) => (
+        <Spring
+          delay={200}
+          to={{
+            transform: isVisible ? "translateY(0)" : "translateY(-50px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        >
+          {({ transform, opacity }) => (
+            <animated.div
+              className={
+                "bg-gray-50 w-[400px] rounded px-5 py-2 mb-4 flex justify-between items-center text-black " +
+                className
+              }
+              style={{
+                opacity,
+              }}
+            >
+              <div>
+                <h1 className="text-sm">Items Received</h1>
+                <p className="font-bold text-xs">100</p>
+              </div>
+              <FiPackage />
+            </animated.div>
+          )}
+        </Spring>
+      )}
+    </VisibilitySensor>
   );
 };
 const ImageCard = ({ className }) => {
   return (
-    <img
-      src={process.env.PUBLIC_URL + "/images/delivery-man.jpg"}
-      className={" rounded  w-[400px] " + className}
-      alt="test"
-    />
+    <VisibilitySensor partialVisibility>
+      {({ isVisible }) => (
+        <Spring
+          delay={200}
+          to={{
+            transform: isVisible ? "translateY(0)" : "translateY(-50px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        >
+          {({ transform, opacity }) => (
+            <animated.img
+              src={process.env.PUBLIC_URL + "/images/delivery-man.jpg"}
+              className={" rounded  w-[400px] " + className}
+              alt="test"
+              style={{
+                opacity,
+              }}
+            />
+          )}
+        </Spring>
+      )}
+    </VisibilitySensor>
   );
 };
 
 const InfoCard = ({ className, step, title, description }) => {
   return (
-    <article className="max-w-[400px] text-lg text-white  p-2 rounded">
-      <h1 className="font-bold ">STEP {step}</h1>
-      <h2 className=" font-semibold pt-3 pb-1">{title}</h2>
-      <p className="">{description}</p>
-    </article>
+    <VisibilitySensor partialVisibility>
+      {({ isVisible }) => (
+        <Spring
+          delay={200}
+          to={{
+            transform: isVisible ? "translateY(0)" : "translateY(-50px)",
+            opacity: isVisible ? 1 : 0,
+          }}
+        >
+          {({ transform, opacity }) => (
+            <animated.article
+              style={{
+                transform,
+                opacity,
+              }}
+              className="max-w-[400px] text-lg text-white  p-2 rounded"
+            >
+              <h1 className="font-bold ">STEP {step}</h1>
+              <h2 className=" font-semibold pt-3 pb-1">{title}</h2>
+              <p className="">{description}</p>
+            </animated.article>
+          )}
+        </Spring>
+      )}
+    </VisibilitySensor>
+  );
+};
+
+const AnimatedLine = ({ className, height }) => {
+  return (
+    <VisibilitySensor partialVisibility>
+      {({ isVisible }) => (
+        <Spring
+          delay={200}
+          to={{
+            height: isVisible ? height : 0,
+          }}
+        >
+          {({ height }) => (
+            <animated.div
+              className="w-[1px] bg-white"
+              style={{
+                height,
+              }}
+            />
+          )}
+        </Spring>
+      )}
+    </VisibilitySensor>
   );
 };
