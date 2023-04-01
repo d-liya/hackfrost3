@@ -24,7 +24,7 @@ function App() {
                 Company
               </li>
             </div>
-            <li className="font-bold bg-black text-sm  text-gray-50 px-3 py-1">
+            <li className="font-bold bg-black text-sm  text-gray-50 px-3 py-1 rounded">
               Contact us
             </li>
           </ul>
@@ -48,11 +48,6 @@ function App() {
               alt="delivery person"
               className="max-w-[80%] rounded-md"
             />
-            {/* <img
-              src={process.env.PUBLIC_URL + "/images/delivery-man.jpg"}
-              alt="delivery person"
-              className="max-w-[30%] rounded-md absolute right-0"
-            /> */}
           </div>
         </section>
         <section id="about" className="my-5 mt-40">
@@ -94,8 +89,6 @@ function App() {
             </li>
           </ul>
         </section>
-        <section id="stats"></section>
-
         <section
           id="how-it-works"
           className="min-h-screen bg-slate-600 flex-col text-black"
@@ -181,75 +174,160 @@ function App() {
           </div>
           <div className="flex items-center justify-center w-[1150px] m-auto mb-20">
             <div className="flex w-2/3 flex-col m-5 ml-12 pr-12">
-              <div>
-                <div className="flex items-center mb-1">
-                  <HiCurrencyDollar className="mr-1 text-xl text-slate-600" />
-                  <h2 className="text-lg font-semibold">
-                    Reduce Delivery Costs
-                  </h2>
-                </div>
-                <p className="mb-8">
-                  <div className="mb-2">
-                    The last mile is the most inefficient and costly part of the
-                    delivery chain.
-                  </div>{" "}
-                  Reducing the time spent in traffic and finding parking helps
-                  bring down costs.
-                </p>
-              </div>
-              <div>
-                <div className="flex items-center mb-1">
-                  <TiLeaf className="mr-1 text-xl text-emerald-900" />
-                  <h2 className="text-lg font-semibold">
-                    Decarbonize the Last Mile
-                  </h2>
-                </div>
-                <p className="mb-8">
-                  <div className="mb-2">
-                    Help us work towards a net zero future in a cost-effective,
-                    sustainable way.
-                  </div>{" "}
-                  Let us handle the last mile to reduce your carbon footprint
-                  and enhance your brand reputation.
-                </p>
-              </div>
-              <div>
-                <div className="flex items-center mb-1">
-                  <GrTechnology className="mr-1 text-xl" />
-                  <h2 className="text-lg font-semibold">
-                    Leverage Emerging Technology
-                  </h2>
-                </div>
-                <p className="mb-8">
-                  <div className="mb-2">
-                    Cutting-edge drones and electric vehicles are
-                    revolutionizing package delivery.
-                  </div>{" "}
-                  Take advantage of the opportunity to achieve faster and safer
-                  deliveries.
-                </p>
-              </div>
-              <div>
-                <div className="flex items-center mb-1">
-                  <TiLocation className="mr-1 text-xl text-red-800" />
-                  <h2 className="text-lg font-semibold">
-                    Reliable Delivery Management
-                  </h2>
-                </div>
-                <p>
-                  <div className="mb-2">
-                    We are committed to providing reliable and on-time
-                    deliveries.
-                  </div>{" "}
-                  With advanced tracking systems, you can trust us to handle
-                  your packages with care and precision.
-                </p>
-              </div>
+              <VisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <Spring
+                    delay={200}
+                    to={{
+                      transform: isVisible
+                        ? "translateY(0)"
+                        : "translateY(-50px)",
+                      opacity: isVisible ? 1 : 0,
+                    }}
+                  >
+                    {({ transform, opacity }) => (
+                      <animated.div
+                        style={{
+                          transform,
+                          opacity,
+                        }}
+                      >
+                        <div className="flex items-center mb-1">
+                          <HiCurrencyDollar className="mr-1 text-xl text-slate-600" />
+                          <h2 className="text-lg font-semibold">
+                            Reduce Delivery Costs
+                          </h2>
+                        </div>
+                        <p className="mb-8">
+                          <div className="mb-2">
+                            The last mile is the most inefficient and costly
+                            part of the delivery chain.
+                          </div>{" "}
+                          Reducing the time spent in traffic and finding parking
+                          helps bring down costs.
+                        </p>
+                      </animated.div>
+                    )}
+                  </Spring>
+                )}
+              </VisibilitySensor>
+              <VisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <Spring
+                    delay={200}
+                    to={{
+                      transform: isVisible
+                        ? "translateY(0)"
+                        : "translateY(-50px)",
+                      opacity: isVisible ? 1 : 0,
+                    }}
+                  >
+                    {({ transform, opacity }) => (
+                      <animated.div
+                        style={{
+                          transform,
+                          opacity,
+                        }}
+                      >
+                        <div className="flex items-center mb-1">
+                          <TiLeaf className="mr-1 text-xl text-emerald-900" />
+                          <h2 className="text-lg font-semibold">
+                            Decarbonize the Last Mile
+                          </h2>
+                        </div>
+                        <p className="mb-8">
+                          <div className="mb-2">
+                            Help us work towards a net zero future in a
+                            cost-effective, sustainable way.
+                          </div>{" "}
+                          Let us handle the last mile to reduce your carbon
+                          footprint and enhance your brand reputation.
+                        </p>
+                      </animated.div>
+                    )}
+                  </Spring>
+                )}
+              </VisibilitySensor>
+              <VisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <Spring
+                    delay={200}
+                    to={{
+                      transform: isVisible
+                        ? "translateY(0)"
+                        : "translateY(-50px)",
+                      opacity: isVisible ? 1 : 0,
+                    }}
+                  >
+                    {({ transform, opacity }) => (
+                      <animated.div
+                        style={{
+                          transform,
+                          opacity,
+                        }}
+                      >
+                        <div className="flex items-center mb-1">
+                          <GrTechnology className="mr-1 text-xl" />
+                          <h2 className="text-lg font-semibold">
+                            Leverage Emerging Technology
+                          </h2>
+                        </div>
+                        <p className="mb-8">
+                          <div className="mb-2">
+                            Cutting-edge drones and electric vehicles are
+                            revolutionizing package delivery.
+                          </div>{" "}
+                          Take advantage of the opportunity to achieve faster
+                          and safer deliveries.
+                        </p>
+                      </animated.div>
+                    )}
+                  </Spring>
+                )}
+              </VisibilitySensor>
+              <VisibilitySensor partialVisibility>
+                {({ isVisible }) => (
+                  <Spring
+                    delay={200}
+                    to={{
+                      transform: isVisible
+                        ? "translateY(0)"
+                        : "translateY(-50px)",
+                      opacity: isVisible ? 1 : 0,
+                    }}
+                  >
+                    {({ transform, opacity }) => (
+                      <animated.div
+                        style={{
+                          transform,
+                          opacity,
+                        }}
+                      >
+                        <div className="flex items-center mb-1">
+                          <TiLocation className="mr-1 text-xl text-red-800" />
+                          <h2 className="text-lg font-semibold">
+                            Reliable Delivery Management
+                          </h2>
+                        </div>
+                        <p>
+                          <div className="mb-2">
+                            We are committed to providing reliable and on-time
+                            deliveries.
+                          </div>{" "}
+                          With advanced tracking systems, you can trust us to
+                          handle your packages with care and precision.
+                        </p>
+                      </animated.div>
+                    )}
+                  </Spring>
+                )}
+              </VisibilitySensor>
             </div>
             <img
               src={require("./image.png")}
               className="ml-5"
               style={{ height: "560px" }}
+              alt="drone"
             ></img>
           </div>
         </section>
