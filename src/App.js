@@ -12,7 +12,9 @@ function App() {
       <header>
         <nav className="fixed top-0 w-full z-10 backdrop-blur bg-white/50">
           <ul className="flex justify-between items-center h-full py-5 mx-20">
-            <li className="text-emerald-900 font-bold ">Logo</li>
+            <li className="text-emerald-900 text-3xl font-bebos">
+              ECO<sub>2</sub> Drop
+            </li>
             <div>
               <li className="text-base font-semibold cursor-pointer inline px-3 hover:underline decoration-2 underline-offset-[6px]">
                 Smart Fullfillment
@@ -516,7 +518,7 @@ function App() {
           </div>
           <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-              © 2023 Logo. All Rights Reserved.
+              © 2023 ECO<sub>2</sub> Drop. All Rights Reserved.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
               <a
