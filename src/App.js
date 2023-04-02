@@ -157,7 +157,7 @@ function App() {
                     textOne="Number of drones/E-bikes dispatched per run"
                     textTwo="50"
                   />
-                  <ImageCard className="" src="/images/drone-delivery.jpg" />
+                  <ImageCard className="" src="/images/drone2.jpeg" />
                 </article>
               </div>
               <div className="flex justify-center items-center py-80">
