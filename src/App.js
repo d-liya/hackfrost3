@@ -64,7 +64,7 @@ function App() {
             <p className="max-w-[500px] text-lg">
               There’s a new standard for how people order and receive the things
               they need most. With smart end-to-end logistics and autonomous,
-              instant delivery technology, we’re creating teleportation for the
+              instant delivery technology, we’re creating quick and sustainable
               last mile delivery.
             </p>
           </div>
@@ -90,7 +90,7 @@ function App() {
               <div className="w-[1px] h-[100px] bg-white" />
               <InfoCard
                 step={1}
-                title="Package delivered to our warehouse"
+                title="Package dropped off at our warehouse"
                 description="Packages will be delivered to our fulfillment center around the urban areas by our delivery partners."
               />
               {/* <div className="w-[1px] h-[400px] bg-white" />
@@ -103,13 +103,13 @@ function App() {
               <InfoCard
                 step={2}
                 title="Packages on route to your door step"
-                description="Drone or E-bike will be dispatched to the customer's address."
+                description="A drone or E-bike driver will be dispatched to the customer's address."
               />
               <div className="w-[1px] h-[400px] bg-white" />
               <InfoCard
                 step={3}
                 title="Delivered!"
-                description="Package will be delivered to the customer's address."
+                description="Package will be delivered to the customer's door."
               />
               <div className="w-[1px] h-[200px] bg-white" />
               <div className="w-5 h-[1px] bg-white" />
@@ -400,12 +400,12 @@ function App() {
           </video>
           <div className="ml-10 min-w-[500px]">
             <h1 className="text-4xl font-bold">
-              Same distance, Smaller footprint.
+              Same distance, smaller carbon footprint.
             </h1>
             <p className="mt-5 text-xl">
-              ECO Drop's network of hyper local fullfillment center is the
-              future of sustainable last mile delivery bringing inventory closer
-              to the end customer.
+              ECO₂ Drop's network of hyper-localized fullfillment centers is the
+              future of sustainable last mile delivery, bringing inventory
+              closer to the end customer.
             </p>
           </div>
         </section>
