@@ -27,7 +27,7 @@ function App() {
               </li>
             </div>
             <li className="font-bold bg-black text-sm  text-gray-50 px-3 py-1 rounded">
-              Contact us
+              Contact Us
             </li>
           </ul>
         </nav>
@@ -39,7 +39,7 @@ function App() {
           className="min-h-screen mb-5 mx-5 bg-emerald-900 rounded-md flex items-center justify-center flex-col"
         >
           <h1 className="text-6xl text-gray-50 font-bold mt-40 mx-32 text-center">
-            Last Mile Delivery, With Net Zero Emissions
+            Last Mile Delivery, with Net Zero Emissions.
           </h1>
           <button className="bg-gray-50 text-emerald-900 font-bold rounded px-5 py-3 mt-10 mb-16 hover:bg-slate-200">
             Contact Us
@@ -82,7 +82,7 @@ function App() {
             HOW IT WORKS
           </h1>
           <h2 className="text-center text-6xl font-bold py-5 pb-40 text-gray-50 mx-40">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            A greener way to deliver. <br /> Here's how we do it.
           </h2>
           <div className="flex justify-center">
             <div id="line" className="items-center flex flex-col">
@@ -180,24 +180,12 @@ function App() {
         </section>
 
         <section id="about" className="my-20">
-          <h1 className="text-6xl font-bold text-center mb-5">Our Impact</h1>
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          </p>
+          <h1 className="text-6xl font-bold text-center mb-5">
+            Revolutionizing last mile delivery <br />
+            for a better future.
+          </h1>
+          <p className="text-center"></p>
           <ul className="m-20 mx-40">
-            <li className="flex justify-between border-t py-14 items-center">
-              <h2 className="text-2xl font-bold text-8xl">4.2 tons</h2>
-              <div className="max-w-[500px]">
-                <h3 className="font-semibold">
-                  Carbon emissions avoided per year
-                </h3>
-                <p>
-                  Preliminary results from a trial done in Columbia show that up
-                  to 4.2 tons of emissions could be avoided per year by using
-                  cargo e-bikes for last mile deliveries.
-                </p>
-              </div>
-            </li>
             <li className="flex justify-between border-t py-14 items-center">
               <h2 className="text-2xl font-bold text-8xl">84%</h2>
               <div className="max-w-[500px]">
@@ -211,10 +199,24 @@ function App() {
               </div>
             </li>
             <li className="flex justify-between border-t py-14 items-center">
+              <h2 className="text-2xl font-bold text-8xl">4.2 tons</h2>
+              <div className="max-w-[500px]">
+                <h3 className="font-semibold">
+                  Carbon emissions avoided per year.
+                </h3>
+                <p>
+                  Preliminary results from a trial done in Columbia show that up
+                  to 4.2 tons of emissions could be avoided per year by using
+                  cargo e-bikes for last mile deliveries.
+                </p>
+              </div>
+            </li>
+
+            <li className="flex justify-between border-t py-14 items-center">
               <h2 className="text-2xl font-bold text-8xl">70%</h2>
               <div className="max-w-[500px]">
                 <h3 className="font-semibold">
-                  Usage of drones reduce maintainance cost of vans
+                  Usage of drones reduce maintainance cost of vans.
                 </h3>
                 <p>
                   A study indicates that the usage of drones could reduce the
@@ -253,7 +255,7 @@ function App() {
                         <div className="flex items-center mb-1">
                           <HiCurrencyDollar className="mr-1 text-xl text-slate-600" />
                           <h2 className="text-lg font-semibold">
-                            Reduce Delivery Costs
+                            Reduce Delivery Costs.
                           </h2>
                         </div>
                         <p className="mb-8">
@@ -327,7 +329,7 @@ function App() {
                         <div className="flex items-center mb-1">
                           <GrTechnology className="mr-1 text-xl" />
                           <h2 className="text-lg font-semibold">
-                            Leverage Emerging Technology
+                            Leverage Emerging Technology.
                           </h2>
                         </div>
                         <p className="mb-8">
@@ -364,7 +366,7 @@ function App() {
                         <div className="flex items-center mb-1">
                           <TiLocation className="mr-1 text-xl text-red-800" />
                           <h2 className="text-lg font-semibold">
-                            Reliable Delivery Management
+                            Reliable Delivery Management.
                           </h2>
                         </div>
                         <p>
@@ -398,12 +400,12 @@ function App() {
           </video>
           <div className="ml-10 min-w-[500px]">
             <h1 className="text-4xl font-bold">
-              Same distance, Smaller footprint
+              Same distance, Smaller footprint.
             </h1>
             <p className="mt-5 text-xl">
-              This network of hyper local fullfillment center is the future of
-              sustainable last mile delivery bringing inventory closer to the
-              end customer.
+              ECO Drop's network of hyper local fullfillment center is the
+              future of sustainable last mile delivery bringing inventory closer
+              to the end customer.
             </p>
           </div>
         </section>
@@ -446,7 +448,7 @@ function App() {
               <ul class="text-gray-500 dark:text-gray-400 font-medium">
                 <li class="mb-4">
                   <a href="#" class="hover:underline">
-                    Discord Server
+                    Email
                   </a>
                 </li>
                 <li class="mb-4">
@@ -631,7 +633,7 @@ const Card = ({ className, textOne, textTwo }) => {
           {({ transform, opacity }) => (
             <animated.div
               className={
-                "w-[400px] top-[150px] left-[380px] bg-green-500 rounded h-[200px] p-5 flex flex-col justify-between " +
+                "w-[400px] top-[150px] left-[380px] rounded h-[200px] p-5 flex flex-col justify-between " +
                 className
               }
               style={{
