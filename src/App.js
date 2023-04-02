@@ -50,44 +50,27 @@ function App() {
             />
           </div>
         </section>
-        <section id="about" className="my-5 mt-40">
-          <h1 className="text-4xl font-bold text-center mb-5">Our Impact</h1>
-          <p className="text-center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-          </p>
-
-          <ul className="m-20">
-            <li className="flex justify-between border-t py-14 items-center">
-              <h2 className="text-2xl font-bold text-8xl">80% </h2>
-              <div className="">
-                <h3 className="font-semibold">Drone Delivery</h3>
-                <p>
-                  Reduces carbon emissions by 80% compared to traditional
-                  delivery.
-                </p>
-              </div>
-            </li>
-            <li className="flex justify-between border-t py-14 items-center">
-              <h2 className="text-2xl font-bold text-8xl">1000 $</h2>
-              <div className="">
-                <h3 className="font-semibold">Save money</h3>
-                <p>
-                  Reduces carbon emissions by 20% compared to traditional
-                  delivery.
-                </p>
-              </div>
-            </li>
-            <li className="flex justify-between border-t py-14 items-center">
-              <h2 className="text-2xl font-bold text-8xl">20% </h2>
-              <div className="">
-                <h3 className="font-semibold">E-bike Delivery</h3>
-                <p>
-                  Reduces carbon emissions by 20% compared to traditional
-                  delivery.
-                </p>
-              </div>
-            </li>
-          </ul>
+        <section
+          id="about-us"
+          className="my-5 my-40  flex items-center justify-center"
+        >
+          <div className="flex flex-col justify-start p-5 mr-10">
+            <h1 className="font-bold text-gray-900">About Us</h1>
+            <h2 className="text-5xl font-bold mt-4 mb-8">
+              Changing delivery <br /> for good.
+            </h2>
+            <p className="max-w-[500px] text-lg">
+              There’s a new standard for how people order and receive the things
+              they need most. With smart end-to-end logistics and autonomous,
+              instant delivery technology, we’re creating teleportation for the
+              last mile delivery.
+            </p>
+          </div>
+          <img
+            className="max-w-[40%] rounded"
+            src={process.env.PUBLIC_URL + "/images/drone.jpg"}
+            alt="leaf"
+          />
         </section>
         <section
           id="how-it-works"
@@ -105,30 +88,26 @@ function App() {
               <div className="w-[1px] h-[100px] bg-white" />
               <InfoCard
                 step={1}
-                title=" Order is received and retrieved"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
-        dolor sit amet consectetur adipisicing elit"
+                title="Package delivered to our warehouse"
+                description="Packages will be delivered to our fulfillment center around the urban areas by our delivery partners."
               />
+              {/* <div className="w-[1px] h-[400px] bg-white" />
+              <InfoCard
+                step={2}
+                title="Packages loading onto our fleet"
+                description="Packages will be loaded onto our fleet of drones or E-bikes ready for dispatch."
+              /> */}
               <div className="w-[1px] h-[400px] bg-white" />
               <InfoCard
                 step={2}
-                title=" Order is received and retrieved"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
-        dolor sit amet consectetur adipisicing elit"
+                title="Packages on route to your door step"
+                description="Drone or E-bike will be dispatched to the customer's address."
               />
               <div className="w-[1px] h-[400px] bg-white" />
               <InfoCard
                 step={3}
-                title=" Order is received and retrieved"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
-        dolor sit amet consectetur adipisicing elit"
-              />
-              <div className="w-[1px] h-[300px] bg-white" />
-              <InfoCard
-                step={4}
-                title=" Order is received and retrieved"
-                description="Lorem ipsum dolor sit amet consectetur adipisicing elit Lorem ipsum
-        dolor sit amet consectetur adipisicing elit"
+                title="Delivered!"
+                description="Package will be delivered to the customer's address."
               />
               <div className="w-[1px] h-[200px] bg-white" />
               <div className="w-5 h-[1px] bg-white" />
@@ -136,30 +115,62 @@ function App() {
             <div>
               <div className="flex justify-center items-center pt-60">
                 <article className="flex items-center">
-                  <SmallCard className="absolute translate-x-[300px] translate-y-[150px]" />
-                  <Card className="-translate-x-5 translate-y-5 bg-teal-600 text-white" />
-                  <ImageCard className="" />
+                  <SmallCard
+                    className="absolute translate-x-[300px] translate-y-[150px]"
+                    textOne="Packages received"
+                    textTwo={1000}
+                  />
+                  <Card
+                    className="-translate-x-5 translate-y-5 bg-teal-600 text-white"
+                    textOne="Number of packages received per day"
+                    textTwo={1000}
+                  />
+                  <ImageCard className="" src="/images/unload.jpg" />
                 </article>
               </div>
-              <div className="flex justify-center items-center pt-80">
+              {/* <div className="flex justify-center items-center pt-80">
                 <article className="flex items-center">
                   <ImageCard className="" />
-                  <SmallCard className="absolute  translate-y-[150px]" />
-                  <Card className="-translate-x-5 -translate-y-10 text-white bg-green-900" />
+                  <SmallCard
+                    className="absolute  translate-y-[150px]"
+                    textOne="Fleet count"
+                    textTwo="50"
+                  />
+                  <Card
+                    className="-translate-x-5 -translate-y-10 text-white bg-green-900"
+                    textOne="Number of drones/E-bikes dispatched per run"
+                    textTwo="50"
+                  />
                 </article>
-              </div>
+              </div> */}
               <div className="flex justify-center items-center pt-80">
                 <article className="flex items-center">
-                  <SmallCard className="absolute translate-x-[300px] translate-y-[150px] " />
-                  <Card className="-translate-x-5 translate-y-5 bg-cyan-800 text-white" />
-                  <ImageCard className="" />
+                  <SmallCard
+                    className="absolute translate-x-[300px] translate-y-[150px] "
+                    textOne="Fleet count"
+                    textTwo="50"
+                  />
+                  <Card
+                    className="-translate-x-5 translate-y-5 bg-cyan-800 text-white"
+                    textOne="Number of drones/E-bikes dispatched per run"
+                    textTwo="50"
+                  />
+                  <ImageCard className="" src="/images/drone-delivery.jpg" />
                 </article>
               </div>
               <div className="flex justify-center items-center py-80">
                 <article className="flex items-center">
-                  <ImageCard className="" />
-                  <SmallCard className="absolute  translate-y-[150px]" />
-                  <Card className="-translate-x-5 -translate-y-10 bg-emerald-600 text-white" />
+                  <ImageCard src="/images/deliverypackage.jpg" />
+                  <SmallCard
+                    className="absolute  translate-y-[180px]"
+                    textOne="Fewer carbon emissions"
+                    textTwo="97% less"
+                  />
+                  <Card
+                    className="-translate-x-5 -translate-y-10 bg-emerald-600 text-white"
+                    textOne="Fewer carbon emissions"
+                    textTwo="97% less"
+                  />
                 </article>
               </div>
             </div>
@@ -331,7 +342,24 @@ function App() {
             ></img>
           </div>
         </section>
-        <section id="map"></section>
+        <section
+          id="map"
+          className="flex justify-center pb-20 mx-20 items-center"
+        >
+          <video autoPlay loop muted className="rounded max-w-[60%]">
+            <source src={process.env.PUBLIC_URL + "/images/map.mp4"} />
+          </video>
+          <div className="ml-10 min-w-[500px]">
+            <h1 className="text-4xl font-bold">
+              Same distance, Smaller footprint
+            </h1>
+            <p className="mt-5 text-xl">
+              This network of hyper local fullfillment center is the future of
+              sustainable last mile delivery bringing inventory closer to the
+              end customer.
+            </p>
+          </div>
+        </section>
       </body>
 
       <footer class="bg-white dark:bg-gray-900">
@@ -574,7 +602,7 @@ const Card = ({ className, textOne, textTwo }) => {
   );
 };
 
-const SmallCard = ({ className }) => {
+const SmallCard = ({ className, textOne, textTwo, icon }) => {
   return (
     <VisibilitySensor partialVisibility>
       {({ isVisible }) => (
@@ -596,10 +624,10 @@ const SmallCard = ({ className }) => {
               }}
             >
               <div>
-                <h1 className="text-sm">Items Received</h1>
-                <p className="font-bold text-xs">100</p>
+                <h1 className="text-sm">{textOne || "Items Received"}</h1>
+                <p className="font-bold text-xs">{textTwo || "100"}</p>
               </div>
-              <FiPackage />
+              {icon || <FiPackage />}
             </animated.div>
           )}
         </Spring>
@@ -607,7 +635,7 @@ const SmallCard = ({ className }) => {
     </VisibilitySensor>
   );
 };
-const ImageCard = ({ className }) => {
+const ImageCard = ({ className, src }) => {
   return (
     <VisibilitySensor partialVisibility>
       {({ isVisible }) => (
@@ -620,7 +648,11 @@ const ImageCard = ({ className }) => {
         >
           {({ transform, opacity }) => (
             <animated.img
-              src={process.env.PUBLIC_URL + "/images/delivery-man.jpg"}
+              src={
+                src
+                  ? process.env.PUBLIC_URL + src
+                  : process.env.PUBLIC_URL + "/images/delivery-man.jpg"
+              }
               className={" rounded  w-[400px] " + className}
               alt="test"
               style={{
@@ -657,30 +689,6 @@ const InfoCard = ({ className, step, title, description }) => {
               <h2 className=" font-semibold pt-3 pb-1">{title}</h2>
               <p className="">{description}</p>
             </animated.article>
-          )}
-        </Spring>
-      )}
-    </VisibilitySensor>
-  );
-};
-
-const AnimatedLine = ({ className, height }) => {
-  return (
-    <VisibilitySensor partialVisibility>
-      {({ isVisible }) => (
-        <Spring
-          delay={200}
-          to={{
-            height: isVisible ? height : 0,
-          }}
-        >
-          {({ height }) => (
-            <animated.div
-              className="w-[1px] bg-white"
-              style={{
-                height,
-              }}
-            />
           )}
         </Spring>
       )}
