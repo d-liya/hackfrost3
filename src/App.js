@@ -37,7 +37,7 @@ function App() {
           className="min-h-screen mb-5 mx-5 bg-emerald-900 rounded-md flex items-center justify-center flex-col"
         >
           <h1 className="text-6xl text-gray-50 font-bold mt-40 mx-32 text-center">
-            Last Mile Delivery, With Zero Emissions
+            Last Mile Delivery, With Net Zero Emissions
           </h1>
           <button className="bg-gray-50 text-emerald-900 font-bold rounded px-5 py-3 mt-10 mb-16 hover:bg-slate-200">
             Contact Us
@@ -177,6 +177,51 @@ function App() {
           </div>
         </section>
 
+        <section id="about" className="my-20">
+          <h1 className="text-6xl font-bold text-center mb-5">Our Impact</h1>
+          <p className="text-center">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+          </p>
+          <ul className="m-20 mx-40">
+            <li className="flex justify-between border-t py-14 items-center">
+              <h2 className="text-2xl font-bold text-8xl">4.2 tons</h2>
+              <div className="max-w-[500px]">
+                <h3 className="font-semibold">
+                  Carbon emissions avoided per year
+                </h3>
+                <p>
+                  Preliminary results from a trial done in Columbia show that up
+                  to 4.2 tons of emissions could be avoided per year by using
+                  cargo e-bikes for last mile deliveries.
+                </p>
+              </div>
+            </li>
+            <li className="flex justify-between border-t py-14 items-center">
+              <h2 className="text-2xl font-bold text-8xl">84%</h2>
+              <div className="max-w-[500px]">
+                <h3 className="font-semibold">
+                  Greenhouse-gas emissions reduced
+                </h3>
+                <p>
+                  Studies show that greenhouse-gas emissions per parcel are 84%
+                  lower for drones than for diesel trucks.
+                </p>
+              </div>
+            </li>
+            <li className="flex justify-between border-t py-14 items-center">
+              <h2 className="text-2xl font-bold text-8xl">70%</h2>
+              <div className="max-w-[500px]">
+                <h3 className="font-semibold">
+                  Usage of drones reduce maintainance cost of vans
+                </h3>
+                <p>
+                  A study indicates that the usage of drones could reduce the
+                  maintainance and labour overhead of vans by 70%.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
         <section id="about">
           <div className="flex items-center justify-center w-[1150px] m-auto mt-10 pt-20">
             <h1 className="text-5xl font-bold text-center mb-10 ml-12">
@@ -471,8 +516,7 @@ function App() {
           </div>
           <div class="px-4 py-6 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
             <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">
-              © 2023 <a href="https://flowbite.com/">Flowbite™</a>. All Rights
-              Reserved.
+              © 2023 Logo. All Rights Reserved.
             </span>
             <div class="flex mt-4 space-x-6 sm:justify-center md:mt-0">
               <a
